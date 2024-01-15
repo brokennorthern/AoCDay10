@@ -17,9 +17,6 @@ namespace AoCDay10
             var StartPosition = FindStart(SplitPut)
                 .Split(' ');
             Console.WriteLine(PipeTravel(int.Parse(StartPosition[1]), int.Parse(StartPosition[0]), SplitPut));
-
-            //Console.WriteLine(SplitPut[int.Parse(StartPosition[0])][int.Parse(StartPosition[1])]);
-            
         }
 
         static int PipeTravel(int X, int Y, string[] Input)
@@ -50,13 +47,10 @@ namespace AoCDay10
 
                 Steps = Steps + 1;
                 PreviousMove = NextMove;
-                Console.WriteLine(Steps);
                 if (Input[Y][X] == 'S'){
                     Looper = false; 
                 }
-
             }
-            //Console.WriteLine(Input[Y][X]);
             return Steps / 2;
         }
 
@@ -66,16 +60,10 @@ namespace AoCDay10
             var SouthMove = new[] { '|', 'F', '7' };
             var WestMove = new[] { '-', 'J', '7' };
             var EastMove = new[] { '-', 'F', 'L' };
-
             var SMovementNorth = new[] { '|', 'F', '7' };
             var SMovementSouth = new[] { '|', 'J', 'L' };
             var SMovementWest = new[] { '-', 'F', 'L' };
             var SMovementEast = new[] { '-', 'J', '7' };
-
-            if (Prev == "null")
-            {
-                return "North";
-            }
 
             if (Input[Y][X] == 'S')
             {
@@ -117,7 +105,6 @@ namespace AoCDay10
 
             return "null";
         }
-
 
         static string FindStart(string[] Input)
         {
